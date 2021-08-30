@@ -1,0 +1,12 @@
+.inline {
+    display: flex;
+    width: 100px;
+    height: 10%;
+    padding: 5px;
+    border: 1px;
+}
+
+.letter {
+    padding: 2px;
+    margin: 2px;
+}
