@@ -1,16 +1,20 @@
 import { useState, useEffect } from 'react'
-import UsedArray from './UsedArray';
+
 
 import './letterList.css'
 
 import LetterList from './LetterList';
+import UsedArray from './UsedArray';
+import Hangman from './Hangman';
+
 
 //The max length for our words is going to be 12
 
-const RandomWord = () => {
+const RandomWord = (props) => {
    const [word, setWord] = useState(''); //Set the state of the word
    const [secret, setSecret] = useState();
    const [used, setUsed] = useState([]);
+   const [mistakes, setMistakes] = useState(-1);
     
    async function requestNum() {
         const random = Math.floor(Math.random()*Math.pow(10, 5))
@@ -49,28 +53,43 @@ const RandomWord = () => {
 
 
     //--------------------------------- KeyBoard Management --------------------------------------
-
-    window.addEventListener("keyup", checkKey, false);
+    useEffect(() => {
+        window.addEventListener("keyup", checkKey, false);
+        return () => {
+            window.removeEventListener("keyup", checkKey, false);
+        }
+    }, [secret])
+   
+  
 
     function checkKey(key) {
-        if(key.keyCode >= 65 && key.keyCode <= 90) {
+        if((key.keyCode >= 65 && key.keyCode <= 90) || key.keyCode === 165) {
             checkKeyPressed(String.fromCharCode(key.keyCode));
         }
     }
 
 
-    //---------------------------------- CHECK IF LETTER IS CORRECT-------------------
+    //---------------------------------- CHECK IF LETTER IS CORRECT-------------------------------
     const checkKeyPressed = (key) => {
+        let wrong = true;
+        if(!(used.includes(key)))
+        used.push(key)
+
         for(let i = 0; i <word.length; i++){
             if(word[i].toUpperCase() === key) {
                 secret[i] =  key
-                setSecret(secret)
-            } else {
-                console.log('wrong')
-                setUsed([...used, key])
-            }
+                wrong = false;
+            } 
+        } 
+
+        if(wrong === true) {
+            setMistakes(mistakes + 1)
         }
+
+        setSecret([...secret])
     }
+
+
 
     return(
         <div>
@@ -82,8 +101,12 @@ const RandomWord = () => {
             </div>
             <div>
                 {   
-                    !used.length === 0 ? (<UsedArray />) : (<div></div>)
+                    used ? (<UsedArray usedArray={used} />) : (<div></div>)
                 }
+            </div>
+
+            <div>
+                <Hangman mistakes={mistakes}/>
             </div>
             
         </div>
