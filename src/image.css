@@ -19,40 +19,77 @@
 }
 
 .head{
- 
+    position: absolute;
+    z-index: 0;
+    top: 11rem;
 }
 
 .neck{
    position: absolute;
    z-index: -1;
-   top: 350px;
-   left: 79px;
+   top: 22rem;
+   left: 5rem;
 }
 
 .body {
    position: absolute;
    z-index: 0;
-   top: 400px;
-   left: 50px; 
+   top: 25rem;
+   left: 3rem; 
 }
 
 .right-arm {
     position: absolute;
     z-index: -1;
-    top: 400px;
-    left: 110px; 
+    top: 25rem;
+    left: 7rem; 
 }
 
 .left-arm {
     position: absolute;
     z-index: -1;
-    top: 400px;
-    left: -35px; 
+    top: 24rem;
+    left: -2rem; 
 }
 
 .right-hand {
     position: absolute;
-    z-index: -1;
-    top: 0px;
-    left: 0px;   
+    z-index: -2;
+    bottom: 310px;
+    left: 215px;   
+}
+
+.left-hand {
+    position: absolute;
+    z-index: -2;
+    bottom: 310px;
+    left: -45px;  
+}
+
+.right-leg {
+    position: absolute;
+    z-index: -2;
+    bottom: 120px;
+    left: 105px;  
+}
+
+.left-leg {
+    position: absolute;
+    z-index: -2;
+    bottom: 120px;
+    left: 18px;  
+}
+
+.right-foot {
+    position: absolute;
+    z-index: -3;
+    bottom: 105px;
+    left: 140px;  
+}
+
+.left-foot {
+    position: absolute;
+    z-index: -3;
+    bottom: 105px;
+    left: -20px;  
 }

@@ -15,7 +15,7 @@ import lfoot from './images/left-foot.png'
 
 
 const Hangman = ({mistakes}) => {
-   /* const bodyParts = document.getElementsByClassName('hide');
+   const bodyParts = document.getElementsByClassName('hide');
     let elementShowed;
 
     if(mistakes >= 0 && mistakes < 11){
@@ -25,19 +25,19 @@ const Hangman = ({mistakes}) => {
 
     if(mistakes >= 10) {
         console.log("Game over");
-    }*/
+    }
        
 
     return(
         <div>
             <img src={bar} alt='bar' height="60px" />
             <div className="container">
-                <img src={head} alt='head' className="head fit" />
-                <img src={neck} alt='neck' className="neck fit" />
-                <img src={body} alt='body' className="body fit" />
-                <img src={rarm} alt='right-arm' className="right-arm fit" />
-                <img src={larm} alt='left-arm' className="left-arm fit" />
-                <img src={rhand} alt='right-hand' className="right-hand fit" />
+                <img src={head} alt='head' className="hide head fit" />
+                <img src={neck} alt='neck' className="hide neck fit" />
+                <img src={body} alt='body' className="hide body fit" />
+                <img src={rarm} alt='right-arm' className="hide right-arm fit" />
+                <img src={larm} alt='left-arm' className="hide left-arm fit" />
+                <img src={rhand} alt='right-hand' className="hide right-hand fit" />
                 <img src={lhand} alt='left-hand' className="hide left-hand fit" />
                 <img src={rleg} alt='right-leg' className="hide right-leg fit" />
                 <img src={lleg} alt='left-leg' className="hide left-leg fit" />
