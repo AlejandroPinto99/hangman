@@ -23,19 +23,14 @@ const Hangman = ({mistakes}) => {
         elementShowed.classList.add('show') ;
     }
 
-    if(mistakes >= 10) {
-        console.log("Game over");
-    }
-       
-
     return(
         <div>
-            <img src={bar} alt='bar' height="60px" />
+            <img src={bar} alt='bar' className="bar"/>
             <div className="container">
-                <img src={head} alt='head' className="hide head fit" />
-                <img src={neck} alt='neck' className="hide neck fit" />
+                <img src={head} alt='head' className=" hide head fit" />
+                <img src={neck} alt='neck' className=" hide neck fit" />
                 <img src={body} alt='body' className="hide body fit" />
-                <img src={rarm} alt='right-arm' className="hide right-arm fit" />
+                <img src={rarm} alt='right-arm' className=" hide right-arm fit" />
                 <img src={larm} alt='left-arm' className="hide left-arm fit" />
                 <img src={rhand} alt='right-hand' className="hide right-hand fit" />
                 <img src={lhand} alt='left-hand' className="hide left-hand fit" />

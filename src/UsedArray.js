@@ -1,13 +1,13 @@
-import Letter from './Letter'
+import Letter from './Key'
 
 const UsedArray = ({usedArray}) => {
     return(
         <div>
-            <p>Used letters: </p>
-            <div className="inline">
+            <p className="font-format"> YOU MISSED: </p>
+            <div className="inline-used">
             {
                 usedArray.map((letter, i) => (
-                <Letter key={i} letter={letter} />
+                <Letter key={i} letter={letter} style="key-used"/>
                 ))
             }
             </div>

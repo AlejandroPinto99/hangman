@@ -1,0 +1,141 @@
+
+.gameSpace {
+    margin: 6rem 8rem;
+    padding: 3em 0em;
+    height: 35rem;
+    box-shadow: black;
+    box-shadow: 0 0 50px #ccc;
+}
+
+.grid{
+    display: grid;
+    height:35rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:  70% 30%;
+}
+
+
+.hangman{
+    grid-column: 1/ span 1; 
+    grid-row: 1 / span 2;
+}
+
+.missed{
+    grid-column: 2 / span 1; 
+    grid-row: 1 / span 2;
+}
+
+.guess{
+    grid-column: 1/ span 3; 
+    display:flex;
+    justify-content: center;
+}
+
+.letters-container{
+    display: flex;
+    height:200px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.inline-keys {
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    padding: 5px;
+    border: 1px;
+}
+
+.inline-used {
+    display: flex;
+    width: 100px;
+    height: 10%;
+    padding: 5px;
+    border: 1px;
+}
+
+.key-used{
+    padding: 3px;
+    margin: 2px;
+    font-family: Aller;
+    color: rgb(101, 101, 245);
+    font-size:xx-large;
+}
+
+.keys {
+    height: 25px;
+    width: 20px;
+    padding: 30px;
+    margin: 0px 10px;
+    background-color: rgb(58, 54, 54);
+    font-family: Aller;
+    font-size:xx-large;
+    border-radius: 10px;
+    color: white
+}
+
+.inactive-key{
+    height: 25px;
+    width: 20px;
+    padding: 30px;
+    margin: 0px 10px;
+    background-color: rgba(58, 54, 54, 0.3);
+    font-size:xx-large;
+    border-radius: 10px;
+  
+}
+
+.font-format{
+    font-family: Aller;
+    color:rgb(58, 54, 40);
+    font-size: large;
+}
+
+
+@font-face {
+    font-family: Aller;
+    src: url('./fonts/AllerDisplay.ttf');
+  }
+
+.game-over-div {
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0px;
+    top: 0;
+    height: 150%;
+    width: 100%;
+    background-color: rgba(5, 9, 59, 0.6);
+}
+
+.title{
+    color: white;
+    font-family: Aller;
+    font-size: xx-large;
+}
+
+.gover-btn {
+    height: 50px;
+    width: 160px;
+    margin-left: 12px;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 2px solid orange;
+    border-style: dashed;
+    color: orange;
+    font-family: Aller;
+}
+
+.gover-btn:hover {
+    height: 50px;
+    width: 160px;
+    margin-left: 12px;
+    border-radius: 30px;
+    background-color: rgb(85, 59, 10);
+    border: 2px solid orange;
+    border-style: dashed;
+    color: white;
+    font-family: Aller;
+}
