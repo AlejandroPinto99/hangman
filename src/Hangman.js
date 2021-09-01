@@ -15,35 +15,34 @@ import lfoot from './images/left-foot.png'
 
 
 const Hangman = ({mistakes}) => {
-    const bodyParts = document.getElementsByClassName('hide')
-    let elementShowed
+   /* const bodyParts = document.getElementsByClassName('hide');
+    let elementShowed;
 
     if(mistakes >= 0 && mistakes < 11){
-        elementShowed = bodyParts[mistakes]
-        elementShowed.classList.add('show')  
-        console.log(bodyParts)
+        elementShowed = bodyParts[mistakes];
+        elementShowed.classList.add('show') ;
     }
 
-    if(mistakes > 10) {
-        console.log("Game over")
-    }
+    if(mistakes >= 10) {
+        console.log("Game over");
+    }*/
        
 
     return(
         <div>
-            <img src={bar} alt='bar' />
-            <div>
-                <img src={head} alt='head' className="hide" />
-                <img src={neck} alt='neck' className="hide" />
-                <img src={body} alt='body' className="hide" />
-                <img src={rarm} alt='right-arm' className="hide" />
-                <img src={larm} alt='left-arm' className="hide" />
-                <img src={rhand} alt='right-hand' className="hide" />
-                <img src={lhand} alt='left-hand' className="hide" />
-                <img src={rleg} alt='right-leg' className="hide" />
-                <img src={lleg} alt='left-leg' className="hide" />
-                <img src={rfoot} alt='right-foot' className="hide" />
-                <img src={lfoot} alt='left-foot' className="hide" />
+            <img src={bar} alt='bar' height="60px" />
+            <div className="container">
+                <img src={head} alt='head' className="head fit" />
+                <img src={neck} alt='neck' className="neck fit" />
+                <img src={body} alt='body' className="body fit" />
+                <img src={rarm} alt='right-arm' className="right-arm fit" />
+                <img src={larm} alt='left-arm' className="left-arm fit" />
+                <img src={rhand} alt='right-hand' className="right-hand fit" />
+                <img src={lhand} alt='left-hand' className="hide left-hand fit" />
+                <img src={rleg} alt='right-leg' className="hide right-leg fit" />
+                <img src={lleg} alt='left-leg' className="hide left-leg fit" />
+                <img src={rfoot} alt='right-foot' className="hide right-foot fit" />
+                <img src={lfoot} alt='left-foot' className="hide left-foot fit" />
             </div>
         </div>
     )

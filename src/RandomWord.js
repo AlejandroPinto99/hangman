@@ -15,6 +15,8 @@ const RandomWord = (props) => {
    const [secret, setSecret] = useState();
    const [used, setUsed] = useState([]);
    const [mistakes, setMistakes] = useState(-1);
+
+//-------------------------------------REQUEST A NEW WORD----------------------------------------
     
    async function requestNum() {
         const random = Math.floor(Math.random()*Math.pow(10, 5))
@@ -30,29 +32,31 @@ const RandomWord = (props) => {
         } catch(e) {  //Managing any error
             console.log("Word not found")
         }
-
-    
     }
+
+//-----------------------------------FILLS THE NEW SECRET WORD WITH BLANK SPACES------------------------- 
 
     const fillSecretArray = () => {
         let spaces = []
         for(let i = 0; i < word.length ; i++){
-            spaces.push(' _ ')
+            spaces.push('_')
         }
 
         setSecret(spaces);
     }
 
-    useEffect(() => {
+//-------Triggers the NewWord at the beginning of the game
+    useEffect(() => {   
         requestNum(); //Making the request just one time
     }, []) 
 
+//------------Triggers the black spaces -------------------
     useEffect(() => {
         fillSecretArray();
     }, [word])
 
 
-    //--------------------------------- KeyBoard Management --------------------------------------
+//--------------------------------- KeyBoard Management --------------------------------------
     useEffect(() => {
         window.addEventListener("keyup", checkKey, false);
         return () => {
@@ -61,7 +65,7 @@ const RandomWord = (props) => {
     }, [secret])
    
   
-
+//----------------------------------Checks if the key pressed is valid-----------------
     function checkKey(key) {
         if((key.keyCode >= 65 && key.keyCode <= 90) || key.keyCode === 165) {
             checkKeyPressed(String.fromCharCode(key.keyCode));
@@ -87,13 +91,24 @@ const RandomWord = (props) => {
         }
 
         setSecret([...secret])
+        let victory = checkVictory();
+        console.log(victory);
+    }
+
+    const checkVictory = () => {
+        for(let i = 0; i < secret.length; i++){
+            if(secret[i] === '_') {
+               return false;
+            }
+        }
+
+        return true;
     }
 
 
 
     return(
         <div>
-            <p>{word}</p>
             <div>
                 {   
                     secret ? (<LetterList word={secret} />) : (<div></div>)

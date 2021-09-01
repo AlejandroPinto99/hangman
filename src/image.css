@@ -5,3 +5,54 @@
 .show {
     display: inline
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.fit{
+    height: fit-content;
+    width: fit-content;
+    margin-left: 220px;
+}
+
+.head{
+ 
+}
+
+.neck{
+   position: absolute;
+   z-index: -1;
+   top: 350px;
+   left: 79px;
+}
+
+.body {
+   position: absolute;
+   z-index: 0;
+   top: 400px;
+   left: 50px; 
+}
+
+.right-arm {
+    position: absolute;
+    z-index: -1;
+    top: 400px;
+    left: 110px; 
+}
+
+.left-arm {
+    position: absolute;
+    z-index: -1;
+    top: 400px;
+    left: -35px; 
+}
+
+.right-hand {
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 0px;   
+}
