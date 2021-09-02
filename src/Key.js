@@ -1,7 +1,7 @@
 
 const Letter = ({letter, style}) => {
     return(
-        <div className="p-white">
+        <div>
             <p  className={style} >{letter}</p>
         </div>
     )

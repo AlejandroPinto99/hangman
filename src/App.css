@@ -31,7 +31,7 @@
 .missed{
     grid-column: 2 / span 3; 
     grid-row: 1/ span 2;
-    width: 50%;
+    width: auto;
     height: 70%;
 }
 
@@ -45,29 +45,21 @@
 .letters-container{
     display: flex;
     height: 100%;
-    width: 100%;
-}
-
-.inline-container {
-    display: flex;
-    width: 100%;
-    align-items: center;
+    width: 100%;;
     justify-content: center;
 }
+
 
 .inline-keys {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 1rem;
     z-index: 2;
 }
 
 .keys {
     height: 25px;
-    width: 20%;
+    width: 20px;
     padding: 30px;
     margin: 0px 10px;
     background-color: rgb(58, 54, 54);
@@ -91,13 +83,14 @@
 .inline-used {
     display: flex;
     height: 10%;
-    width: 100%;
+    width: fit-content;
     padding: 5px;
     border: 1px;
 }
 
 .key-used{
     height: 10%;
+    width: 50%;
     padding: 3px;
     margin: 2px;
     font-family: Aller;
@@ -110,13 +103,10 @@
     font-family: Aller;
     color:rgb(58, 54, 40);
     font-size: large;
+    width: 50%;
 }
 
 
-@font-face {
-    font-family: Aller;
-    src: url('./fonts/AllerDisplay.ttf');
-  }
 
 .game-over-div {
     position: absolute;
@@ -184,4 +174,128 @@
     left: 1232px;
     bottom: 85px;
     z-index: 1;
+  }
+
+  @media all and (max-width: 1400px) {
+
+    .guess{
+        grid-column: 1/ span 3; 
+        grid-row: 2/ span 3;
+        width: 100%;
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    .inline-keys {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        margin-bottom: 10%;
+        gap: 1rem;
+        z-index: 2;
+    }
+
+    .keys {
+        height: 20px;
+        width: 20px;
+        padding: 20px;
+        margin: 0px 5px;
+        background-color: rgb(58, 54, 54);
+        font-family: Aller;
+        font-size: xx-large;
+        border-radius: 10px;
+        color: white
+    }
+
+    .inactive-key{
+        height: 20px;
+        width: 20px;
+        padding: 20px;
+        margin: 0px 5px;
+        background-color: rgba(58, 54, 54, 0.3);
+        border-radius: 10px;
+    }
+
+
+    .inline-used {
+        display: flex;
+        height: 10%;
+        width: fit-content;
+        flex-wrap: wrap;
+        padding: 5px;
+        border: 1px;
+    }
+    
+    .key-used{
+        height: 5%;
+        width: 40%;
+        font-family: Aller;
+        color: rgb(101, 101, 245);
+        font-size: xx-large;
+    }
+    
+  }
+
+  @media all and (max-width: 450px) {
+
+    .guess{
+        grid-column: 1/ span 3; 
+        grid-row: 2/ span 3;
+        width: 100%;
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    .inline-keys {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        margin-bottom: 10%;
+        gap: 1rem;
+        z-index: 2;
+    }
+
+    .keys {
+        height: 20px;
+        width: 20px;
+        padding: 10px;
+        margin: 0px 5px;
+        background-color: rgb(58, 54, 54);
+        font-family: Aller;
+        font-size:large;
+        border-radius: 10px;
+        color: white
+    }
+
+    .inactive-key{
+        height: 20px;
+        width: 20px;
+        padding: 10px;
+        margin: 0px 5px;
+        background-color: rgba(58, 54, 54, 0.3);
+        border-radius: 10px;
+    }
+
+
+    .inline-used {
+        display: flex;
+        height: 10%;
+        width: fit-content;
+        flex-wrap: wrap;
+        padding: 5px;
+        border: 1px;
+    }
+    
+    .key-used{
+        height: 5%;
+        width: 40%;
+        font-family: Aller;
+        color: rgb(101, 101, 245);
+        font-size: large;
+    }
+    
+  }
+
+  
+@font-face {
+    font-family: Aller;
+    src: url('./fonts/AllerDisplay.ttf');
   }

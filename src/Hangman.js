@@ -32,7 +32,7 @@ const Hangman = ({mistakes}) => {
     } 
 
     return(
-        <div>
+        <div className="elements-container">
             <img src={bar} alt='bar' className="bar"/>
             <div className="container">
                 <img src={head} alt='head' className="hide head fit" />
