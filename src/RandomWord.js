@@ -126,11 +126,11 @@ const RandomWord = () => {
 
     return(
         <div className="grid" >
-            <div className="">
+            <div className="hangman">
                 <Hangman mistakes={mistakes}/>
             </div>
 
-            <div className="">
+            <div className="missed">
                 {   
                     used ? (<UsedArray usedArray={used} />) : (<div></div>)
                 }
@@ -147,8 +147,9 @@ const RandomWord = () => {
                  (checkVictory() === true || mistakes === 10) ? (
                         <Modal>
                             <div className="game-over-div">
-                                <div >
+                                <div className="game-over-info" >
                                     <h1 className="title">GAME OVER</h1>
+                                    <p className="word">The word was: {word}</p>
                                     <button className="gover-btn" onClick={resetGame}>NEW WORD</button>
                                 </div>
                             </div>

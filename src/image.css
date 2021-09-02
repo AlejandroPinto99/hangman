@@ -8,7 +8,7 @@
 
 .container{
     position: relative;
-    right: 90px;
+    right: 125px;
     bottom: -10px;
     display: flex;
     flex-direction: column;

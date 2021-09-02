@@ -1,72 +1,73 @@
-
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
 .gameSpace {
-    margin: 6rem 8rem;
-    padding: 3em 0em;
-    height: 35rem;
+    height: 80%;
+    width:85%;
     box-shadow: black;
-    box-shadow: 0 0 10fhdkpx black;
+    box-shadow: 0 0 10px black;
     background-color: white;
 }
 
 .grid{
     display: grid;
-    height:35rem;
+    height:100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows:  70% 30%;
 }
 
 
 .hangman{
-    grid-column: 1/ span 1; 
-    grid-row: 1 / span 2;
+    grid-column: 1/ span 2;
+    grid-row: 1/ span 2;
+    width: 50%;
+    height: 70%;
 }
 
 .missed{
-    grid-column: 2 / span 1; 
-    grid-row: 1 / span 2;
+    grid-column: 2 / span 3; 
+    grid-row: 1/ span 2;
+    width: 50%;
+    height: 70%;
 }
 
 .guess{
     grid-column: 1/ span 3; 
-    display:flex;
-    justify-content: center;
+    grid-row: 2/ span 3;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .letters-container{
     display: flex;
-    height:200px;
-    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
+.inline-container {
+    display: flex;
+    width: 100%;
     align-items: center;
+    justify-content: center;
 }
 
 .inline-keys {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    height: 10%;
-    padding: 5px;
-    border: 1px;
+    height: 100%;
+    width: 100%;
     z-index: 2;
-}
-
-.inline-used {
-    display: flex;
-    width: 100px;
-    height: 10%;
-    padding: 5px;
-    border: 1px;
-}
-
-.key-used{
-    padding: 3px;
-    margin: 2px;
-    font-family: Aller;
-    color: rgb(101, 101, 245);
-    font-size:xx-large;
 }
 
 .keys {
     height: 25px;
-    width: 20px;
+    width: 20%;
     padding: 30px;
     margin: 0px 10px;
     background-color: rgb(58, 54, 54);
@@ -76,16 +77,34 @@
     color: white
 }
 
+
 .inactive-key{
     height: 25px;
-    width: 20px;
+    width: 20%;;
     padding: 30px;
     margin: 0px 10px;
     background-color: rgba(58, 54, 54, 0.3);
     font-size:xx-large;
     border-radius: 10px;
-  
 }
+
+.inline-used {
+    display: flex;
+    height: 10%;
+    width: 100%;
+    padding: 5px;
+    border: 1px;
+}
+
+.key-used{
+    height: 10%;
+    padding: 3px;
+    margin: 2px;
+    font-family: Aller;
+    color: rgb(101, 101, 245);
+    font-size:xx-large;
+}
+
 
 .font-format{
     font-family: Aller;
@@ -107,8 +126,8 @@
     align-items: center;
     left: 0px;
     top: 0;
-    height: 150%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     background-color: rgba(5, 9, 59, 0.6);
 }
 
@@ -116,6 +135,19 @@
     color: white;
     font-family: Aller;
     font-size: xx-large;
+}
+
+.word {
+    color: white;
+    font-family: Aller;
+    font-size: x-large;
+}
+
+.game-over-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .gover-btn {
@@ -149,7 +181,7 @@
     border-left: 320px solid transparent;
 
     position: absolute;
-    left: 1065px;
-    bottom: -30px;
+    left: 1232px;
+    bottom: 85px;
     z-index: 1;
   }
