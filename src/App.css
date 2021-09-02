@@ -4,7 +4,8 @@
     padding: 3em 0em;
     height: 35rem;
     box-shadow: black;
-    box-shadow: 0 0 50px #ccc;
+    box-shadow: 0 0 10fhdkpx black;
+    background-color: white;
 }
 
 .grid{
@@ -44,6 +45,7 @@
     height: 10%;
     padding: 5px;
     border: 1px;
+    z-index: 2;
 }
 
 .inline-used {
@@ -139,3 +141,15 @@
     color: white;
     font-family: Aller;
 }
+
+.triangle{
+    width: 0;
+    height: 0;
+    border-bottom: 300px solid rgb(17, 94, 146);
+    border-left: 320px solid transparent;
+
+    position: absolute;
+    left: 1065px;
+    bottom: -30px;
+    z-index: 1;
+  }

@@ -29,19 +29,21 @@
 
 .head{
     height: 7rem;
+    z-index: 1;
 }
 
 .neck{
   height: 4rem;
   position: relative;
   bottom: 40px;
-  z-index: -1;
+  z-index: 0;
 }
 
 .body {
   height: 8rem;
   position: relative;
   bottom: 55px;
+  z-index: 2;
 }
 
 .right-arm {
@@ -49,7 +51,7 @@
     position: relative;
     bottom: 180px;
     left: 58px;
-    z-index: -1;
+    z-index: 1;
 }
 
 .left-arm {
@@ -57,7 +59,7 @@
     position: relative;
     bottom: 260px;
     left: -57px;
-    z-index: -1;
+    z-index: 1;
 }
 
 .right-hand {
@@ -65,7 +67,7 @@
     position: relative;
     bottom: 275px;
     left: 95px;
-    z-index: -2;
+    z-index: 0;
 }
 
 .left-hand {
@@ -73,7 +75,7 @@
     position: relative;
     bottom: 300px;
     left: -95px;
-    z-index: -2;
+    z-index: 0;
 }
 
 .right-leg {
@@ -82,7 +84,7 @@
     position: relative;
     bottom: 280px;
     left: 35px;
-    z-index: -2;
+    z-index: 1;
 }
 
 .left-leg {
@@ -91,7 +93,7 @@
     position: relative;
     bottom: 395px;
     left: -35px;
-    z-index: -2;
+    z-index: 1;
 }
 
 .right-foot {
@@ -100,7 +102,7 @@
     position: relative;
     bottom: 410px;
     left: 68px;
-    z-index: -3;
+    z-index: 0;
 }
 
 .left-foot {
@@ -109,5 +111,5 @@
     position: relative;
     bottom: 445px;
     left: -65px;
-    z-index: -3;
+    z-index: 0;
 }

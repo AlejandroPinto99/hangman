@@ -29,7 +29,6 @@ const RandomWord = () => {
             const json = await res.json();
 
             if(json[0].word.length <= 12){
-                console.log(json[0].word.length)
                 setWord(json[0].word);
             } else {
                 requestNum();
@@ -155,6 +154,7 @@ const RandomWord = () => {
                             </div>
                         </Modal>
                 ) : null}
+
         </div>
     )
 }

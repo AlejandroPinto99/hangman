@@ -8,6 +8,7 @@ const App = () => {
     <div className="background">
       <div className="gameSpace">
           <RandomWord />
+          <div className="triangle"> </div>
       </div>
     </div>
   )

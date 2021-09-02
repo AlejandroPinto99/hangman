@@ -15,22 +15,30 @@ import lfoot from './images/left-foot.png'
 
 
 const Hangman = ({mistakes}) => {
-   const bodyParts = document.getElementsByClassName('hide');
     let elementShowed;
+    const images = document.getElementsByClassName('fit')
 
-    if(mistakes >= 0 && mistakes < 11){
-        elementShowed = bodyParts[mistakes];
-        elementShowed.classList.add('show') ;
+    console.log(mistakes)
+
+    if(mistakes === -1) {
+        for(let i = 0; i < images.length; i++) {
+            images[i].classList.remove('show')
+        }
     }
+       
+    if(mistakes >= 0 && mistakes < 11){
+        elementShowed = images[mistakes];
+        elementShowed.classList.add('show') ;
+    } 
 
     return(
         <div>
             <img src={bar} alt='bar' className="bar"/>
             <div className="container">
-                <img src={head} alt='head' className=" hide head fit" />
-                <img src={neck} alt='neck' className=" hide neck fit" />
+                <img src={head} alt='head' className="hide head fit" />
+                <img src={neck} alt='neck' className="hide neck fit" />
                 <img src={body} alt='body' className="hide body fit" />
-                <img src={rarm} alt='right-arm' className=" hide right-arm fit" />
+                <img src={rarm} alt='right-arm' className="hide  right-arm fit" />
                 <img src={larm} alt='left-arm' className="hide left-arm fit" />
                 <img src={rhand} alt='right-hand' className="hide right-hand fit" />
                 <img src={lhand} alt='left-hand' className="hide left-hand fit" />
