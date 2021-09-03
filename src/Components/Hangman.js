@@ -1,4 +1,4 @@
-import '../styles/images.css'
+import '../styles/image.css'
 
 //All the model parts get imported
 
