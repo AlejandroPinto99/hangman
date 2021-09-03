@@ -99,14 +99,17 @@ const RandomWord = () => {
         }
 
         setSecret([...secret])                   //The cells get updated
-
-        checkVictory();                          //We check if the player won
-
-        checkLoss();                             //We check if the player lost
+         checkVictory();                                       //We check if the player won                           //We check if the player lost
     }
 
+
+    useEffect(() => {
+        checkLoss();
+    }, [mistakes]);
+
     const checkLoss = () => {
-        if(mistakes === 9){   //If the player has the max number of mistakes
+        console.log("Gameset", mistakes)
+        if(mistakes === 10){   //If the player has the max number of mistakes 
             setMessage("GAME OVER");   // Shows GAME OVER
             setModal(true);           //We show the game over panel with the message
         }
@@ -160,7 +163,7 @@ const RandomWord = () => {
                                 <div className="game-over-info" >
                                     <h1 className="title">{message}</h1>
                                     {
-                                        mistakes >= 10 ? (
+                                        mistakes === 10 ? (
                                             <p className="word">The word was: {word}</p>
                                         ) : null
                                     }

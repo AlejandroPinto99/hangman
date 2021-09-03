@@ -17,8 +17,6 @@ import lfoot from '../assets/images/left-foot.png'
 
 
 const Hangman = ({mistakes}) => {
-
-    console.log(mistakes)
     let elementShowed;       //The element we want to show
     const images = document.getElementsByClassName('fit') //All the elements get into this array
     
