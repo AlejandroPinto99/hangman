@@ -1,20 +1,17 @@
-import '../image.css'
-
-
 //All the model parts get imported
 
-import bar from '../images/bar.png'
-import head from '../images/head.png'
-import neck from '../images/neck.png'
-import rarm from '../images/right-arm.png'
-import larm from '../images/left-arm.png'
-import rhand from '../images/right-hand.png'
-import lhand from '../images/left-hand.png'
-import body from '../images/corpus.png'
-import rleg from '../images/right-leg.png'
-import lleg from '../images/left-leg.png'
-import rfoot from '../images/right-foot.png'
-import lfoot from '../images/left-foot.png'
+import bar from '../assets/images/bar.png'
+import head from '../assets/images/head.png'
+import neck from '../assets/images/neck.png'
+import rarm from '../assets/images/right-arm.png'
+import larm from '../assets/images/left-arm.png'
+import rhand from '../assets/images/right-hand.png'
+import lhand from '../assets/images/left-hand.png'
+import body from '../assets/images/corpus.png'
+import rleg from '../assets/images/right-leg.png'
+import lleg from '../assets/images/left-leg.png'
+import rfoot from '../assets/images/right-foot.png'
+import lfoot from '../assets/images/left-foot.png'
 
 
 const Hangman = ({mistakes}) => {

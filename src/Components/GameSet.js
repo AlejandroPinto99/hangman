@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import '../App.css'
+import '../styles/App.css'
 
 import LetterList from './KeyList';
 import UsedArray from './UsedArray';

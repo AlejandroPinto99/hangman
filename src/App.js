@@ -1,6 +1,6 @@
 import GameSet from './Components/GameSet'
 
-import './App.css'
+import './styles/App.css'
 
 
 const App = () => {
