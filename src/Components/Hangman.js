@@ -17,6 +17,8 @@ import lfoot from '../assets/images/left-foot.png'
 
 
 const Hangman = ({mistakes}) => {
+
+    console.log(mistakes)
     let elementShowed;       //The element we want to show
     const images = document.getElementsByClassName('fit') //All the elements get into this array
     
@@ -30,6 +32,8 @@ const Hangman = ({mistakes}) => {
         elementShowed = images[mistakes]; //The current image is selected in this variable
         elementShowed.classList.add('show') ; //And receives the show class, and is showed to the player
     } 
+
+    console.log(elementShowed, " MISTAKES:", mistakes)
 
     return(
         <div className="elements-container">

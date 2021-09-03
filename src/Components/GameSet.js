@@ -160,7 +160,7 @@ const RandomWord = () => {
                                 <div className="game-over-info" >
                                     <h1 className="title">{message}</h1>
                                     {
-                                        mistakes === 10 ? (
+                                        mistakes >= 10 ? (
                                             <p className="word">The word was: {word}</p>
                                         ) : null
                                     }
