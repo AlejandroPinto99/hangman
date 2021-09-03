@@ -1,3 +1,5 @@
+import '../styles/images.css'
+
 //All the model parts get imported
 
 import bar from '../assets/images/bar.png'
