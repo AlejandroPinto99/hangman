@@ -108,7 +108,6 @@ const RandomWord = () => {
     }, [mistakes]);
 
     const checkLoss = () => {
-        console.log("Gameset", mistakes)
         if(mistakes === 10){   //If the player has the max number of mistakes 
             setMessage("GAME OVER");   // Shows GAME OVER
             setModal(true);           //We show the game over panel with the message

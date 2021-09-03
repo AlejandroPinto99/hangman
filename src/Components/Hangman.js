@@ -31,8 +31,6 @@ const Hangman = ({mistakes}) => {
         elementShowed.classList.add('show') ; //And receives the show class, and is showed to the player
     } 
 
-    console.log(elementShowed, " MISTAKES:", mistakes)
-
     return(
         <div className="elements-container">
             <img src={bar} alt='bar' className="bar"/>
