@@ -7,8 +7,7 @@ const App = () => {
   return(
     <div className="background">
       <div className="gameSpace">
-          <GameSet />
-          <div className ="triangle"></div>
+          <GameSet />  
       </div>
     </div>
   )
