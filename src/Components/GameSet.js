@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 
-
-import './App.css'
+import '../App.css'
 
 import LetterList from './KeyList';
 import UsedArray from './UsedArray';
@@ -16,6 +15,8 @@ const RandomWord = () => {
    const [secret, setSecret] = useState([]);
    const [used, setUsed] = useState([]);
    const [mistakes, setMistakes] = useState(-1);
+   const [showModal, setModal] = useState(false);
+   const [message, setMessage] = useState('')
 
 //-------------------------------------REQUEST A NEW WORD----------------------------------------
     
@@ -31,13 +32,11 @@ const RandomWord = () => {
             if(json[0].word.length <= 12){
                 setWord(json[0].word);
             } else {
-                requestNum();
+                requestNum(); //If the word is longer than 12 characters, we request a new one
             }
             
-            console.log(json[0].word)
         } catch(e) {  //Managing any error
-            console.log("Word not found")
-
+            alert(e.message);
        }
         
     }
@@ -47,7 +46,7 @@ const RandomWord = () => {
     const fillSecretArray = () => {
         let spaces = []
         for(let i = 0; i < word.length ; i++){
-            spaces.push(' ')
+            spaces.push(' ') //We fill all the cells with empty spaces
         }
 
         setSecret(spaces);
@@ -66,7 +65,7 @@ const RandomWord = () => {
 
 //--------------------------------- KeyBoard Management --------------------------------------
     useEffect(() => {
-        window.addEventListener("keyup", checkKey, false);
+        window.addEventListener("keyup", checkKey, false); 
         return () => {
             window.removeEventListener("keyup", checkKey, false);
         }
@@ -75,7 +74,7 @@ const RandomWord = () => {
   
 //----------------------------------Checks if the key pressed is valid-----------------
     function checkKey(key) {
-        if((key.keyCode >= 65 && key.keyCode <= 90) && mistakes < 10) {
+        if((key.keyCode >= 65 && key.keyCode <= 90) && mistakes < 10) { //If they key a valid key
             checkKeyPressed(String.fromCharCode(key.keyCode));
         }
     }
@@ -84,44 +83,55 @@ const RandomWord = () => {
     //---------------------------------- CHECK IF LETTER IS CORRECT-------------------------------
     const checkKeyPressed = (key) => {
         let wrong = true;
-       
 
-        for(let i = 0; i <word.length; i++){
-            if(word[i].toUpperCase() === key) {
-                secret[i] =  key
-                wrong = false;
+        for(let i = 0; i <word.length; i++){  
+            if(word[i].toUpperCase() === key) {  //The word is traversed and all keys are checked
+                secret[i] =  key                 //If key pressed is equal to one word's character, is assigned
+                wrong = false;                   //The player hasn't done a mistake
             } 
         } 
 
-        if(wrong === true) {
-            if(!(used.includes(key))) {
-            setMistakes(mistakes + 1)
-            used.push(key)
+        if(wrong === true) {                     //If the player did a mistake
+            if(!(used.includes(key))) {          //And the key pressed hasn't been pressed before
+            setMistakes(mistakes + 1)            //We count one mistake
+            used.push(key)                       //And we add the that key to the pressed list
             }
         }
 
-        setSecret([...secret])
+        setSecret([...secret])                   //The cells get updated
 
-        console.log(checkVictory());
+        checkVictory();                          //We check if the player won
+
+        checkLoss();                             //We check if the player lost
+    }
+
+    const checkLoss = () => {
+        if(mistakes === 9){   //If the player has the max number of mistakes
+            setMessage("GAME OVER");   // Shows GAME OVER
+            setModal(true);           //We show the game over panel with the message
+        }
     }
 
     const checkVictory = () => {
             for(let i = 0; i < secret.length; i++){
-                if(secret[i] === ' ') {
-                   return false;
-                }
+                if(secret[i] === ' ') { //If all the valid cell has a empty space inside of it
+                   return false;         // then that means that the player hasn't won ye
+                } 
             }
-            return true;
+            //If not
+            setMessage("Congratulation! You won!!")  //We set the win message
+            setModal(true); //And we show the modal with the proper message
     }
 
     const resetGame = () => {
-        setUsed([]);
-        setSecret([]);
-        setMistakes(-1);
-        setWord('');
+        setUsed([]); //Used list gets cleaned
+        setSecret([]); //Secret gets cleaned
+        setMistakes(-1); //The mistakes count gets reset
+        setWord('');     //Prepare the word variable to request a new one for the next game
+        setModal(false); // Modal is set on false for no be showed
 
-        requestNum();
-
+        //At the end we request a new word
+        requestNum();    
     }
 
     return(
@@ -144,12 +154,16 @@ const RandomWord = () => {
                 </div>
             </div>
                 {
-                 (checkVictory() === true || mistakes === 10) ? (
-                        <Modal>
+                 showModal ? (
+                        <Modal >
                             <div className="game-over-div">
                                 <div className="game-over-info" >
-                                    <h1 className="title">GAME OVER</h1>
-                                    <p className="word">The word was: {word}</p>
+                                    <h1 className="title">{message}</h1>
+                                    {
+                                        mistakes === 10 ? (
+                                            <p className="word">The word was: {word}</p>
+                                        ) : null
+                                    }
                                     <button className="gover-btn" onClick={resetGame}>NEW WORD</button>
                                 </div>
                             </div>

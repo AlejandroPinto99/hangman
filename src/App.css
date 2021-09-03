@@ -167,12 +167,12 @@
 .triangle{
     width: 0;
     height: 0;
-    border-bottom: 300px solid rgb(17, 94, 146);
-    border-left: 320px solid transparent;
+    border-bottom: 18.8em solid rgb(17, 94, 146);
+    border-left: 23em solid transparent;
 
-    position: absolute;
-    left: 1232px;
-    bottom: 85px;
+    position: relative;
+    left: 71.3%;
+    bottom: 49.7%;
     z-index: 1;
   }
 

@@ -1,6 +1,9 @@
 import Letter from './Key'
 
-const UsedArray = ({usedArray}) => {
+const UsedArray = ({usedArray}) => { //The used array is received
+
+    //The array is mapped, and show with the proper style for it
+
     return(
         <div>
             <p className="font-format"> YOU MISSED: </p>
